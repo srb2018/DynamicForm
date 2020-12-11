@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "DynamicFormApp"
+    }
+  },
+  "defaultProject": "DynamicFormApp",
+  "cli": {
+    "analytics": false
+  }
 }
