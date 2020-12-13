@@ -1,0 +1,23 @@
+<form [formGroup]="dynamicForm">
+    <div class="card m-3">
+        <h5 class="card-header">Doctor & Patient Details Form</h5>
+        <h6>Doctor Name: Rao</h6>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Number of Patients</label>
+                    <select formControlName="numberOfPatients" class="form-control" (change)="onChangePatients($event)" [ngClass]="{ 'is-invalid': submitted && f.numberOfPatients.errors }">
+                        <option value=""></option>
+                        <option *ngFor="let i of ['Admin', 'Company', 'Employee']">{{i}}</option>
+                    </select>
+                    <div *ngIf="submitted && f.numberOfPatients.errors" class="invalid-feedback">
+                        <div *ngIf="f.numberOfPatients.errors.required">Number of Patients is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-primary mr-1" routerLink="/dynamicform" (click)="onSubmit()">Submit</button>            
+        </div>
+    </div>
+</form>
